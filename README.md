@@ -15,3 +15,13 @@ $ java -jar -Dserver.port=8090 target/demo-server-0.0.1-SNAPSHOT.jar
 ```
 $ nginx -p . -c nginx.conf
 ```
+
+### Nginx With SSL
+
+```
+$ openssl genrsa -des3 -out server.key 2048 // create private key
+
+$ openssl rsa -in server.key -out server.key // remove passphrase
+
+$ openssl x509 -req -days 365 -in server.csr -signkey server.key -out server.crt // generate self signed certificate
+```
