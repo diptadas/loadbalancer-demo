@@ -2,15 +2,10 @@
 
 ## Server side LB: Nginx
 
-### Build docker image
+### Spring Boot Demo Server
 
 ```
-$ docker build -t diptadas/server .
-```
-
-### Run docker image
-
-```
-$ docker run -it -p 8090:8080 -e NAME=server-1 diptadas/server
-$ docker run -it -p 8070:8080 -e NAME=server-2 diptadas/server
+$ mvn clean install
+$ java -jar -Dserver.port=8070 target/demo-server-0.0.1-SNAPSHOT.jar
+$ java -jar -Dserver.port=8090 target/demo-server-0.0.1-SNAPSHOT.jar
 ```
