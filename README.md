@@ -1,8 +1,8 @@
 # Load Balancer Demo
 
-## Server side LB: Nginx
+## Server Side LB: Nginx
 
-### Spring Boot Demo Server
+### Spring boot demo server
 
 ```
 $ mvn clean install
@@ -16,14 +16,17 @@ $ java -jar -Dserver.port=8090 target/demo-server-0.0.1-SNAPSHOT.jar
 $ nginx -p . -c nginx.conf
 ```
 
-### Nginx With SSL
+### Configure nginx with SSL
 
 ```
-$ openssl genrsa -des3 -out server.key 2048 // create private key
+// create private key
+$ openssl genrsa -des3 -out server.key 2048
 
-$ openssl rsa -in server.key -out server.key // remove passphrase
+// remove passphrase
+$ openssl rsa -in server.key -out server.key
 
-$ openssl x509 -req -days 365 -in server.csr -signkey server.key -out server.crt // generate self signed certificate
+// generate self signed certificate
+$ openssl x509 -req -days 365 -in server.csr -signkey server.key -out server.crt
 ```
 
 ## Client Side LB: Ribbon
