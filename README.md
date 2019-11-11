@@ -37,12 +37,32 @@ $ openssl x509 -req -days 365 -in server.csr -signkey server.key -out server.crt
 $ cd ribbon-demo
 $ mvn clean install
 
-// run server
+// run servers
 $ cd demo-server
 $ java -jar -Dserver.port=8070 target/demo-server-0.0.1-SNAPSHOT.jar
 $ java -jar -Dserver.port=8090 target/demo-server-0.0.1-SNAPSHOT.jar
 
 // run client
-$ cd ../demo-client
+$ cd demo-client
+$ java -jar target/demo-client-0.0.1-SNAPSHOT.jar
+```
+
+### Ribbon with Eureka
+
+```
+$ cd ribbon-eureka-demo
+$ mvn clean install
+
+// run service registry
+$ cd demo-discovery
+$ java -jar target/demo-discovery-0.0.1-SNAPSHOT.jar
+
+// run servers
+$ cd demo-server
+$ java -jar -Dserver.port=8070 target/demo-server-0.0.1-SNAPSHOT.jar
+$ java -jar -Dserver.port=8090 target/demo-server-0.0.1-SNAPSHOT.jar
+
+// run client
+$ cd demo-client
 $ java -jar target/demo-client-0.0.1-SNAPSHOT.jar
 ```
