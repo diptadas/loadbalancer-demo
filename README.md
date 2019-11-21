@@ -114,3 +114,5 @@ $ java -jar target/demo-client-0.0.1-SNAPSHOT.jar
 // test
 $ curl localhost:8020
 ```
+
+Check Eureka UI: http://localhost:8761
