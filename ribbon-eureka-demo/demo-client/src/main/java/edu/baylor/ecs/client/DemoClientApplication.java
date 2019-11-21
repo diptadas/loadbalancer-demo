@@ -14,7 +14,7 @@ import org.springframework.web.client.RestTemplate;
 @RestController
 @SpringBootApplication
 @EnableDiscoveryClient
-@RibbonClient(name = "demo-server", configuration = DemoServerConfiguration.class)
+@RibbonClient(name = "demo-server", configuration = RibbonConfiguration.class)
 public class DemoClientApplication {
     @Bean
     @LoadBalanced

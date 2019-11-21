@@ -12,7 +12,7 @@ import org.springframework.web.client.RestTemplate;
 
 @RestController
 @SpringBootApplication
-@RibbonClient(name = "demo-server", configuration = DemoServerConfiguration.class)
+@RibbonClient(name = "demo-server", configuration = RibbonConfiguration.class)
 public class DemoClientApplication {
     @Bean
     @LoadBalanced
